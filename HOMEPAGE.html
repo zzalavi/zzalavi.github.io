@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>A2 BlubBlub's Adventure</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="application/javascript" src="jquery-3.5.1.min.js"></script>
+    <style type="text/css">
+    
+        html, html > body {
+            margin: 0;
+            padding: 1em;
+            font-family:Arial;
+        }
+        @font-face {
+  font-family: 'Extradition';
+  src:
+   url('Extradition.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+.container {
+  position: relative;
+  text-align: left;
+  size: 20%;
+  color: white;
+  width: 400px;
+  height: 300px;
+  
+  background-image: url("clouds3.png");
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+        *:not(a) {
+            -moz-user-select: -moz-none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        img {
+            pointer-events: none;
+        }
+
+        .mario_big, .mario_small {
+            position: absolute;
+            left: 25px;
+            top: 178px;
+            z-index: 1000;
+        }
+
+        .mario_warping {
+            z-index: unset;
+        }
+
+        .mario_big {
+            width: 25px;
+        }
+
+        #stage {
+            position: relative;
+            height: 300px;
+            width: 400px;
+            margin: 0;
+            background-color: #40bfff;
+            background-size: contain;
+            background-repeat: repeat-x;
+            overflow: hidden;
+            animation: bg_ani_1 20s infinite linear, bg_ani_2 2s infinite alternate;
+            border: 1px solid #000;
+            border-radius: 1em;
+            margin-left: 1em;
+            margin-top: 0.3em;
+            box-shadow: inset 0px -5px 14px 0px rgba(0, 0, 0, 0.55);
+            filter: saturate(0.6);
+        }
+        .tv {
+            background-repeat: no-repeat;
+            height: 410px;
+            width: 600px;
+            z-index: 99999999999;
+            position: absolute;
+            content: '';
+            background-image: url("tv.png");
+            border-radius: 1em;
+            background-size: contain;
+            top: 0;
+            left: 8px;
+        }
+        
+        /* .scanlines {
+            height: 310px;
+            width: 440px;
+            z-index: 999999999;
+            position: absolute;
+            opacity: 0.4;
+            background-image: url(scanlines.png);
+            background-size: contain;
+        } */
+     
+        .info {
+            padding: 2em !IMPORTANT;
+            display:none;
+        }
+
+        #stats_pane {
+            position: absolute;
+            left: 9em;
+            top: 4em;
+            padding: 5px;
+            padding-bottom: 50px;
+            font-size: 8pt;
+            color: #000000;
+            font-weight: bold;
+            font-family: 'Press Start 2P';
+            
+            z-index: 200;
+            text-shadow: 1px 1px 1px #000;
+        }
+        .stats_pane3 {
+            position: absolute;
+            left: 1.5em;
+            top: 3em;
+            font-family: 'Extradition';
+font-style: normal;
+font-weight: 800;
+font-size: 45px;
+line-height: 48px;
+            padding: 5px;
+            padding-bottom: 50px;
+            font-size: 16pt;
+            color: #000000;
+            font-weight: bold;
+            
+            z-index: 200;
+            text-shadow: 1px 1px 1px #000;
+        }
+        .stats_pane4 {
+            position: absolute;
+            left: 7em;
+            top: 6em;
+            font-family: 'Extradition';
+font-style: normal;
+font-weight: 800;
+font-size: 45px;
+line-height: 48px;
+            padding: 5px;
+            padding-bottom: 50px;
+            font-size: 16pt;
+            color: #000000;
+            
+            z-index: 200;
+            text-shadow: 1px 1px 1px #000;
+        }
+
+        #button {
+            position: absolute;
+            left: 1.5em;
+            top: 3em;
+            font-family: 'Extradition';
+font-style: normal;
+font-weight: 800;
+font-size: 45px;
+line-height: 48px;
+            padding: 5px;
+            padding-bottom: 50px;
+            font-size: 16pt;
+            color: #000000;
+            font-weight: bold;
+            background-color: transparent;
+            
+            z-index: 200;
+            text-shadow: 1px 1px 1px #000;
+        }
+    
+      
+
+            #stats_pane img {
+                height: 0.7em;
+            }
+/* 
+            .scanlines2 {
+                height: 410px;
+            width: 600px;
+            z-index: 99999999999;
+            position: absolute;
+            position: absolute;
+            background-image: url(clouds3.png);
+            opacity: 0.5;
+            background-size: contain;
+        } */
+
+        .description {
+            font-family: Arial;
+            font-size: 9pt;
+        }
+
+        .points {
+            color: white;
+            font-size: 12pt;
+            font-weight: bold;
+            position: absolute;
+        }
+
+        #debug {
+            border: 1px dashed blue;
+            position: relative;
+            width: 300px;
+            height: 6em;
+            overflow: hidden;
+        }
+
+        .share {
+            position:absolute;
+            top:200px;  
+            padding-left: 5em;
+        }
+
+        .sprite {
+            display: none;
+        }
+
+        .hide {
+            display: none;
+        }
+
+    </style>
+    
+    <script type="text/javascript" src="gameengine.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="stats_pane">
+            <img id="stats_pane_coin" />BlubBlub's Adventure
+        </div>
+        <div class="stats_pane3">
+            <img id="stats_pane_coin" /> Five Stages of Grief
+         
+        </div>
+        <div class="stats_pane4">
+            
+           <a href="index.html">Play</a> 
+        </div>
+       
+    </div>
+       
+
+    <div class="scanlines2"></div>
+    <div id="stats_pane4"></div>
+    <div class="tv"></div>
+    <div class="scanlines"></div>
+   
+    
+   </div>
+</div>
+   
+    <audio id="audio_jump">
+        <source src="jump.wav" type="audio/wav">
+    </audio>
+    <audio id="audio_mushroom">
+        <source src="mushroom.wav" type="audio/wav">
+    </audio>
+    <audio id="audio_powerup">
+        <source src="powerup.wav" type="audio/wav">
+    </audio>
+    <audio id="audio_bump">
+        <source src="bump.wav" type="audio/wav">
+    </audio>
+    <audio id="audio_died">
+        <source src="died.wav" type="audio/wav">
+    </audio>
+    <audio id="audio_coin">
+        <source src="coin.wav" type="audio/wav">
+    </audio>
+    <audio id="audio_coin2">
+        <source src="coin.wav" type="audio/wav">
+    </audio>
+    <audio id="audio_coin3">
+        <source src="coin.wav" type="audio/wav">
+    </audio>
+    <audio id="audio_coin4">
+        <source src="coin.wav" type="audio/wav">
+    </audio>
+    <audio id="audio_pipe">
+        <source src="pipe.wav" type="audio/wav">
+    </audio>
+    <audio id="audio_overworld">
+        <source src="overworld.mp3" type="audio/mp3">
+    </audio>
+    
+</body>
+</html>
