@@ -1,0 +1,70 @@
+@font-face {
+  font-family: extradition;
+  src: url(../Fonts/Extradition.ttf);
+}
+
+
+
+
+
+html, html > body {
+    margin: 0;
+    padding: 1em;
+    font-family:Arial;
+}
+/*Instructions*/
+.background{
+  background-color: #ECECEC;
+}
+.buttons{
+  font-family: extradition,sans-serif;
+  color: #000000;
+}
+.buttons:hover{
+  color: #B4C1FD;
+}
+.left{
+  text-align: left;
+}
+.row {
+  width: 800px;
+}
+
+.paddinggg{
+  padding-top: 60px;
+}
+.paddingg{
+  padding: 20px;
+}
+.start{
+  width: 343px;
+  height: 77px;
+  position: relative;
+  display: inline-block;
+}
+.start .img-top {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.start:hover .img-top {
+  display: inline;
+}
+.ded{
+  height: 230px;
+  width: auto;
+}
+
+/*Statement*/
+.background2{
+  background-image: url(../Images/statement.png);
+  background-size: 1500px 800px;}
+  .statement{
+    font-family: extradition;
+    font-size: 40px;
+  }
+  .small{
+    font-size: 12px;
+  }

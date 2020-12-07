@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Statement</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/flexboxgrid.min.css">
+</head>
+<body class="container col-12-lg background2">
+
+  <div class="row col-3-lg start-lg">
+    <h1 class="statement">Statement</h1>
+    <p class="small">For this assignment, the goal is to create a website that is a kind of game out of 7 or more JavaScript-oriented pages as we are a group of two. THe goal of the game is for it to be interactive and intuitive. The game will revolve around the definition of play that refers to play that involves “engaging in activity for enjoyment for recreation”. We will be including and using the theories from Anna Anthropy’s Rise of the Videogame Zinesters. The topic of choice was free for us to choose as long as our pages created a game.</p>
+    <p class="small">For the game, the original concept is based on the five stages of grief; denial, anger, bargaining, depression and finally acceptance. Firstly, denial is all about escapism and running away from one’s problems. Next, Anger is an emotion that is filled with violence and destruction. Whereas Bargaining is where emotions begin to become more clear and is seen as a conversation. Then, once the emotions are beginning to clear, the sadness of grief hits and depression is often associated with sadness and crying. Finally, after the shower comes the rainbow of acceptance where a person can choose to move on. The goal was to take grief, something that is not seen as a happy or fun subject, and take it to make it into something that looks bright,and is the opposite of what it is supposed to be. As grief is seen as something that is drab and full of mourning, the game needed to have an aesthetic made with a bold colour palette, and elements that looked cute like the character designs.</p>
+    <p class="small">The character Blubblub and Glubglub were created as an identity-less blob character as the desire was to show that anyone and everyone can be dealing with grief and that grief comes at unexpected times. With the games, it is to represent the process of healing and overcoming obstacles as Blubblub’s adventure ensues</p>
+    <p class="small">The idea was rather direct and would start with Blubblub first ‘running away’ from his grief in the first stage where he needs to make it to the end in the “Denial”stage. Next they go through the trial dealing with anger where they destroy blocks and once again have to make it through to the end. After is bargaining, where Blubblub meets the ghost of his best friend that he is grieving and tries to convince them to return to the living world. Next is the stage of depression where Blubblub collects back the tears he cried for his friend, trying to make it to the end. Finally in the last stage of grief, acceptance, Blubblub is congratulated into completion and. But will Blubblub find peace and acceptance or will he fail and never see his best friend Glubglub again?</p>
+
+    <figure class="center-lg paddingg">
+      <div class="start">
+      <a href="index.html">
+        <img src="Images/playagain1.png" class="start img-top">
+      </a>
+      <img src="Images/playagain.png" class="start">
+      </div>
+    </figure>
+
+
+  </div>
+
+  <div class="row center-lg">
+
+
+  <canvas id="glubdeath" width="1000" height="1000"></canvas>
+
+  </div>
+
+  <script type="text/javascript" >"use strict";
+  console.log("hello")
+  function p4() {
+    let img = new Image()
+    img.src = 'Images/dumb.png'
+    let img2 = new Image()
+    img.src = 'Images/fuck.png'
+  	let canvas = document.getElementById("glubdeath");
+    console.log(canvas)
+  	canvas.width = 1000;
+  	canvas.height = 1000;
+  	let ctx = canvas.getContext("2d");
+
+  	let x = 100;
+  	let y = 100;
+  	let s = 25;
+  	let speed = 5;
+
+  	setInterval(function() {
+  		ctx.beginPath();
+  	ctx.clearRect(0, 0, 1000, 1300);
+
+      ctx.fill()
+
+  	    for (let i=0; i<1; i++) {
+  	    	ctx.beginPath();
+  		    ctx.lineWidth = 1;
+  		    ctx.fillStyle = "white";
+  		    ctx.strokeStyle = "black";
+  		    ctx.ellipse(x, y + (i * s * 2), s, s, 0, -Math.PI, Math.PI);
+          ctx.drawImage(img, x, y + (i * s * 2), 220, 220)
+
+  	    }
+
+    		x += speed;
+
+  		if (x > canvas.width || x < 0) {
+  			speed *= -1;
+  		}
+  	}, 1/60*1000);
+
+    setInterval(function() {
+      ctx.beginPath();
+
+
+        for (let i=0; i<1; i++) {
+          ctx.beginPath();
+          ctx.lineWidth = 1;
+          ctx.fillStyle = "white";
+          ctx.strokeStyle = "black";
+          ctx.ellipse(x, y + (i * s * 2), s, s, 0, -Math.PI, Math.PI);
+          ctx.drawImage(img2, x, y + (i * s * 2), 220, 220)
+
+        }
+
+        x += speed;
+
+      if (x > canvas.width || x < 0) {
+        speed *= -1;
+      }
+    }, 1/60*2000);
+  }
+
+  p4();
+  </script>
+
+
+</body>
+
+</html>

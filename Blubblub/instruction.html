@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Instructions</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/flexboxgrid.min.css">
+
+</head>
+<body class="background">
+
+  <div class="container col-6-lg paddinggg">
+
+<a class="buttons start-lg" href="HOMEPAGE.html"><<< BACK</a>
+<div class="container row col-3-lg center-lg">
+  <p class="row start-lg left">Growing up on the planet Blob, Blubblub was a happy blob-person and they grew up with many friends. Particularly, they had their best friends Glubglub. However, one day Blubblub went to visit Glubglub, but Glubglub was found on the ground, never to rise again. Blubblub is sad and mourning the life of their best friend. However, Blubblub learns of a secret technique where they can still meet and hangout with their best friend. However, it will be a long and tedious journey, traveling across vast lands and different realms. Blubblub must be put through the Five Trials of Grief and make it to the Spirit World to see their best friend. Will Blubblub make it all the way through?</p>
+
+  <p class="row start-lg left">Please accompany Blubblub on this long journey and help them complete this trial to be able to reach the Spirit World!</p>
+
+  <p class="row start-lg left">Use the WASD keys to control Blubblub and make it to Glubglub.</p>
+  </div>
+
+  <figure class="center-lg paddingg">
+    <div class="start">
+    <a href="index.html">
+      <img src="Images/start_game1.png" class="start img-top">
+    </a>
+    <img src="Images/start_game.png" class="start">
+    </div>
+  </figure>
+  </div>
+<div class="row center-lg">
+
+
+<div class="col-3-lg end-lg">
+<canvas id="glubdeath" width="640" height="300"></canvas>
+</div>
+
+<div class="col-3-lg">
+  <img src="Images/ded.png" class="ded end-lg">
+  </div>
+
+</div>
+
+<script type="text/javascript" >"use strict";
+console.log("hello")
+function p4() {
+  let img = new Image()
+  img.src = 'Images/dumb.png'
+	let canvas = document.getElementById("glubdeath");
+  console.log(canvas)
+	canvas.width = 640;
+	canvas.height = 360;
+	let ctx = canvas.getContext("2d");
+
+	let x = 100;
+	let y = 100;
+	let s = 25;
+	let speed = 5;
+
+	setInterval(function() {
+		ctx.beginPath();
+		ctx.fillStyle = 'rgb(236,236,236)'
+		ctx.rect(0, 0, canvas.width, canvas.height);
+    ctx.fill()
+
+	    for (let i=0; i<1; i++) {
+	    	ctx.beginPath();
+		    ctx.lineWidth = 1;
+		    ctx.fillStyle = "white";
+		    ctx.strokeStyle = "black";
+		    ctx.ellipse(x, y + (i * s * 2), s, s, 0, -Math.PI, Math.PI);
+        ctx.drawImage(img, x, y + (i * s * 2), 220, 220)
+
+	    }
+
+  		x += speed;
+
+		if (x > canvas.width || x < 0) {
+			speed *= -1;
+		}
+	}, 1/60*1000);
+
+}
+
+p4();
+</script>
+</body>
+
+</html>
