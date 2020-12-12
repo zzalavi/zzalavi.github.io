@@ -14,7 +14,7 @@
      @font-face {
   font-family: 'Extradition';
   src:
-   url('Extradition.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+   url(Fonts/'Extradition.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }  
     
         html, html > body {
@@ -74,7 +74,7 @@
             z-index:2;
             position: absolute;
             content: '';
-            background-image: url(tv.png);
+            background-image: url(Images/tv.png);
             border-radius: 1em;
             background-size: contain;
             top: 0;
@@ -86,7 +86,7 @@
             z-index: 1;
             position: absolute;
             opacity: 0.4;
-            background-image: url(scanlines.png);
+            background-image: url(Images/scanlines.png);
             background-size: contain;
         }
         .info {
@@ -212,7 +212,7 @@ border-radius: 15px;
             }
         }
     </style>
-    <script type="text/javascript" src="gameengine1.js"></script>
+    <script type="text/javascript" src="js/gameengine1.js"></script>
 </head>
 <body>
 
@@ -295,7 +295,7 @@ border-radius: 15px;
         <source src="pipe.wav" type="audio/wav">
     </audio>
     <audio id="audio_overworld">
-        <source src="Louie Zong - ape escape.mp3" type="audio/mp3">
+        <source src="Audio/Louie Zong - ape escape.mp3" type="audio/mp3">
     </audio>
 </body>
 </html>
