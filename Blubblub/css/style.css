@@ -60,11 +60,15 @@ html, html > body {
 /*Statement*/
 .background2{
   background-image: url(../Images/statement.png);
-  background-size: 1500px 800px;}
+  background-size: 2000px 1800px;}
   .statement{
     font-family: extradition;
     font-size: 40px;
   }
   .small{
     font-size: 12px;
+  }
+  .chart{
+    width: 700px;
+    height: auto;
   }
